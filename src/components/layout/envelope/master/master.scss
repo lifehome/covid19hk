@@ -1,0 +1,85 @@
+@charset "utf-8";
+
+$primary: rgb(243 221 100);
+
+@import "~bulma/bulma.sass";
+
+// font family for Traditional Chinese (Hong Kong) glyphs
+@import '~chiron-sans-hk-pro-webfont/css/Regular.css';
+@import '~chiron-sans-hk-pro-webfont/css/Heavy.css';
+
+html {
+  // hide default scrollbar
+  overflow: auto;
+
+  // change default font to Chiron Sans HK Pro
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Chiron Sans HK Pro WS", sans-serif;
+}
+
+html, body {
+  // prevent overscrolling behaviour
+  overscroll-behavior: contain;
+
+  background: $primary;
+}
+
+#___gatsby {
+  background: white;
+}
+
+*:focus {
+  // no outline for every focuses!
+  outline: none;
+}
+
+// **                                                                      ** //
+// * Site-wide styling: refer to `src/layout/containers/MasterContainer.js` * //
+// **                                                                      ** //
+
+// Important directive: Levitate the mobile menu above all other containers
+#wars-mobilemenu-container {
+  position: fixed;
+  z-index: 1098;
+
+  #wars-mobilemenu-modal {
+    display: flex;
+  }
+
+  #wars-mobilemenu {
+    z-index: 1100;
+
+    position: relative;
+  }
+
+  /* Hack the way out: semi-transparent backdrop to dim site content */
+  #burger-backdrop {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 100vh;
+    width:  100vw;
+
+    z-index: 1099;
+
+    transition: all .21s;
+
+    visibility: hidden;
+
+    &.dimmed {
+      background: rgba(0,0,0,.34);
+      visibility: visible;
+    }
+  }
+}
+
+// Important directive: Levitate navbar on top of site content and footer container
+#wars-navbar {
+  z-index: 1003;
+}
+
+// Important directive: Levitate footer on top of site content container, but underneath navbar
+#mobilestickytabs {
+  z-index: 1002;
+}
