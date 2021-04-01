@@ -23,7 +23,7 @@ const MobileMenuAside = styled.aside`
 
   transition: left .21s ease-in, width: .89 ease-in;
 
-  border-radius: 0 13px 0 0;
+  border-radius: 0 5px 0 0;
 
   /* Apple device notches fix */
   padding-bottom: constant(safe-area-inset-bottom);
